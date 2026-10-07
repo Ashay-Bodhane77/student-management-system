@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <h1>Student Management System</h1>
+
+
+    <!-- ================= DASHBOARD STATS ================= -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <span class="stat-icon">👨‍🎓</span>
+
+            <div>
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon">📚</span>
+
+            <div>
+                <h3>Student Records</h3>
+                <p>Active</p>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon">🗂️</span>
+
+            <div>
+                <h3>Database</h3>
+                <p>SQLite</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ADD / UPDATE STUDENT ================= -->
+
+    <div class="form-box">
+
+        <h2>➕ Add / Update Student</h2>
+
+        <input type="hidden" id="studentId">
+
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Student Name"
+        >
+
+
+        <input
+            type="text"
+            id="roll_no"
+            placeholder="Roll Number"
+        >
+
+
+        <input
+            type="text"
+            id="class_name"
+            placeholder="Class"
+        >
+
+
+        <input
+            type="number"
+            id="marks"
+            placeholder="Marks"
+        >
+
+
+        <input
+            type="text"
+            id="contact"
+            placeholder="Contact Number"
+        >
+
+
+        <br>
+
+
+        <button onclick="saveStudent()">
+            💾 Save Student
+        </button>
+
+
+        <button onclick="clearForm()">
+            ✖ Clear
+        </button>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <h2>🔍 Search Student</h2>
+
+        <p class="section-description">
+            Quickly find students by name or roll number
+        </p>
+
+
+        <input
+            type="text"
+            id="searchName"
+            placeholder="Search by Name"
+        >
+
+
+        <input
+            type="text"
+            id="searchRoll"
+            placeholder="Search by Roll Number"
+        >
+
+
+        <br>
+
+
+        <button onclick="searchStudent()">
+            🔎 Search
+        </button>
+
+
+        <button onclick="loadStudents()">
+            📋 Show All
+        </button>
+
+    </div>
+
+
+    <!-- ================= RECORDS HEADER ================= -->
+
+    <div class="records-header">
+
+        <div>
+
+            <h2>Student Records</h2>
+
+            <p>
+                Manage all registered students
+            </p>
+
+        </div>
+
+
+        <span class="record-badge">
+            ● LIVE DATABASE
+        </span>
+
+    </div>
+
+
+    <!-- ================= STUDENT TABLE ================= -->
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Name</th>
+
+                <th>Roll No</th>
+
+                <th>Class</th>
+
+                <th>Marks</th>
+
+                <th>Contact</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="studentTable">
+
+            <!-- Student records will appear here -->
+
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="/static/script.js"></script>
+
+
+</body>
+
+</html>
